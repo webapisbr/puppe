@@ -14,6 +14,7 @@ const scrapeLogic = async (res) => {
             process.env.NODE_ENV === "production"
                 ? process.env.PUPPETEER_EXECUTABLE_PATH
                 : puppeteer.executablePath(),
+        ignoreHTTPSErrors: true
     });
     try{
         const page = await browser.newPage();
